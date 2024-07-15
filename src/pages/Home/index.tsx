@@ -55,17 +55,17 @@ const Home = () => {
                         {results?.map(({ name, gender, url, homeworld }: ResponseCharacterType, idx: number) => {
                             const isFavourite = favourites.some(fav => fav.name === name); 
                             const home = planets?.results.find((planet: ResponsePlanetType) => getIdFromUrl(planet.url) === getIdFromUrl(homeworld));
-
+                            
                             return (
                                 <Grid key={idx} item xs={2} sm={4} md={4}> 
-                                    {!loading && home
+                                    {!loading
                                         ?
                                         <Character 
                                             id={getIdFromUrl(url)} 
                                             name={name} 
                                             image={image} 
                                             gender={gender} 
-                                            homePlanet={home?.name}
+                                            homePlanet={home?.name || ''}
                                             isFavourite={isFavourite}
                                             onClick={isFavourite ? handleRemove : handleAdd}
                                         /> 
