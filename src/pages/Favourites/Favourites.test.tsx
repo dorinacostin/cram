@@ -7,7 +7,7 @@ import favouritesReducer, { removeFavourite } from '../../features/favourites/fa
 import Favourites from './index';
 
 const renderWithProviders = (ui: React.ReactElement, { preloadedState }: any = {}) => {
-    const store = configureStore({
+    const store = configureStore<any>({
         reducer: {
             favourites: favouritesReducer
         },

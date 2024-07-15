@@ -8,7 +8,7 @@ import favouritesReducer, { addFavourite, removeFavourite } from '../../features
 import Description from './index';
 
 const renderWithProviders = (ui: React.ReactElement, { preloadedState }: any = {}) => {
-    const store = configureStore({
+    const store = configureStore<any>({
         reducer: {
             character: characterReducer,
             favourites: favouritesReducer,
@@ -39,7 +39,7 @@ describe('Description Component', () => {
                 favourites: [],
             },
         };
-        const store = configureStore({
+        const store = configureStore<any>({
             reducer: {
                 character: characterReducer,
                 favourites: favouritesReducer,
@@ -77,7 +77,7 @@ describe('Description Component', () => {
                 favourites: [{ name: 'Leia Organa', gender: 'female', homePlanet: 'Alderaan' }],
             },
         };
-        const store = configureStore({
+        const store = configureStore<any>({
             reducer: {
                 character: characterReducer,
                 favourites: favouritesReducer,

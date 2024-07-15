@@ -100,15 +100,21 @@ const Description = () => {
                                         <ListItem sx={{ padding: 0 }}>
                                             <ListItemText primary='Gender' secondary={gender} sx={{ color: '#f37737' }} />
                                         </ListItem>
-                                        {films.length &&
+                                        {films.length 
+                                            ?
                                             <ListItem sx={{ padding: 0 }}>
                                                 <ListItemText primary='Films' secondary={films.map((film: FilmType) => film.title).join(', ')} sx={{ color: '#f37737' }} />
-                                             </ListItem>
+                                            </ListItem>
+                                            : 
+                                            null
                                         }
-                                        {starships.length &&
+                                        {starships.length 
+                                            ?
                                             <ListItem sx={{ padding: 0 }}>
                                                 <ListItemText primary='Starships' secondary={starships.map((starship: StarshipType) => starship.name).join(', ')} sx={{ color: '#f37737' }} />
-                                             </ListItem>
+                                            </ListItem>
+                                            :
+                                            null
                                         }
                                     </List>
                                 </Grid>

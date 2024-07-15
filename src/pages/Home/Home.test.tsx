@@ -19,7 +19,7 @@ const mockUseAppSelector = useAppSelector as jest.Mock;
 const mockUseAppDispatch = useAppDispatch as jest.Mock;
 
 const renderWithProviders = (ui: React.ReactElement, { preloadedState }: any = {}) => {
-    const store = configureStore({
+    const store = configureStore<any>({
         reducer: {
             characters: charactersReducer,
             favourites: favouritesReducer,
